@@ -1401,6 +1401,8 @@ struct task_struct {
 	struct llist_head               kretprobe_instances;
 #endif
 
+	unsigned int cs_count;
+
 	/*
 	 * New fields for task_struct should be added above here, so that
 	 * they are included in the randomized portion of task_struct.
@@ -1416,8 +1418,6 @@ struct task_struct {
 	 *
 	 * Do not put anything below here!
 	 */
-
-	unsigned int cs_count;
 };
 
 static inline struct pid *task_pid(struct task_struct *task)
