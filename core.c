@@ -6036,11 +6036,11 @@ static void __sched notrace __schedule(bool preempt)
 		trace_sched_switch(preempt, prev, next);
 
 
+		prev->cs_count++;
 		next->cs_count++;
 		/* Also unlocks the rq: */
 		rq = context_switch(rq, prev, next, &rf);
 
-		prev->cs_count++;
 		
 	} else {
 		rq->clock_update_flags &= ~(RQCF_ACT_SKIP|RQCF_REQ_SKIP);
