@@ -11,12 +11,15 @@ int main ()
 
     for(i=0; i<NUMBER_OF_ITERATIONS; i++)
         v=(++t)*(u++);
+    
+    long syscallResult = syscall(548, &w);
         
-    if(syscall(548, &w)!=0)
+    if(syscallResult!=0)
         printf("Error!\n");
     else
         printf("This process encounters %u times context switches.\n", w);
 
-    printf("pid=%ld\n", getpid());
+    printf("w = %u\tsystem call result = %ld\n", w, syscallResult);
+    printf("pid=%d\n", getpid());
     while(1);
 }
