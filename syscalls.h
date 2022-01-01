@@ -1380,4 +1380,5 @@ int __sys_setsockopt(int fd, int level, int optname, char __user *optval,
 		int optlen);
 
 asmlinkage long sys_get_number_of_context_switches(unsigned int* count);
+asmlinkage long sys_get_number_of_entering_a_wait_queue(unsigned int* count);
 #endif

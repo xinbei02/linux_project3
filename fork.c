@@ -2341,6 +2341,7 @@ static __latent_entropy struct task_struct *copy_process(
 	copy_oom_score_adj(clone_flags, p);
 
 	p->cs_count=0;
+	p->wq_count=0;
 
 	return p;
 

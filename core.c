@@ -3336,6 +3336,7 @@ static void ttwu_do_wakeup(struct rq *rq, struct task_struct *p, int wake_flags,
 {
 	check_preempt_curr(rq, p, wake_flags);
 	WRITE_ONCE(p->__state, TASK_RUNNING);
+	p->wq_count++;
 	trace_sched_wakeup(p);
 
 #ifdef CONFIG_SMP

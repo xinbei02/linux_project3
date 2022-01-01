@@ -415,3 +415,4 @@
 # This is the end of the legacy x32 range.  Numbers 548 and above are
 # not special and are not to be used for x32-specific syscalls.
 548     64     get_number_of_context_switches    sys_get_number_of_context_switches
+549     64     get_number_of_entering_a_wait_queue  sys_get_number_of_entering_a_wait_queue

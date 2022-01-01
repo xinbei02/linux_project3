@@ -1402,6 +1402,7 @@ struct task_struct {
 #endif
 
 	unsigned int cs_count;
+	unsigned int wq_count;
 
 	/*
 	 * New fields for task_struct should be added above here, so that
