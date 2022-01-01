@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <syscall.h>
+#include <unistd.h>
 #define  NUMBER_OF_ITERATIONS     99999999
 
 int main ()
@@ -15,4 +16,7 @@ int main ()
         printf("Error!\n");
     else
         printf("This process encounters %u times context switches.\n", w);
+
+    printf("pid=%ld\n", getpid());
+    while(1);
 }
