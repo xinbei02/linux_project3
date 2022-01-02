@@ -6,7 +6,7 @@
 
 
 SYSCALL_DEFINE1(get_number_of_entering_a_wait_queue, unsigned int*, count) {
-    unsigned int answer = current->cs_count;
-    printk("pid = %d ; cs_count = %u\n", current->pid, answer);
+    unsigned int answer = current->wq_count;
+    printk("pid = %d ; wq_count = %u\n", current->pid, answer);
     return -copy_to_user(count, &(answer), sizeof(unsigned int));
 }
